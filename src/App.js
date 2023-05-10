@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Location2 from './Location2';
+import BloodCountChart from './BloodCountChart';
+import {BrowserRouter as Router, Route} from "react-router-dom"
+import Location1 from './Location1';
+import Donorpoints from './Donorpoints';
+import Dashboards from './Dashboards';
+import Navigation from './Navigation';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route exact path='/'>
+      <Dashboards/>
+      </Route>
+      <Route path='/Location1'>
+        <Location1/>
+      </Route>
+      <Route path='/Location2'>
+        <Location2/>
+      </Route>
+      <Route path='/Donorpoints'>
+        <Donorpoints/>
+      </Route>
+      <Route path='/Dashboards'>
+        <Dashboards/>
+      </Route>
+      <Route path='/BloodCountChart'>
+        <BloodCountChart/>
+      </Route>
+      <Route path='/Navigation'>
+        <Navigation/>
+      </Route>
+      <div className='foot'>
+      <footer></footer>
+      </div>
+    </Router>
   );
 }
 
